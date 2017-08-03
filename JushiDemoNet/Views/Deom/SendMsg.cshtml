@@ -1,0 +1,27 @@
+﻿
+@{
+
+    ViewBag.Title = "SendMsg";
+    Layout = "";
+
+    List<SelectListItem> typeItems = new List<SelectListItem>();
+    SelectListItem itme = new SelectListItem();
+    itme.Text = "存管金额查询";
+    itme.Value = "account_balance";
+    typeItems.Add(itme);
+}
+
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+       
+        @using (Html.BeginForm("SendMsg", "Deom", FormMethod.Post))
+        {
+            @Html.DropDownList("type", typeItems)
+            <input id="ok" type="submit" value="发送消息"/>
+        }
+    </body>
+</html>
+
